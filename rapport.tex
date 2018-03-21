@@ -1,0 +1,91 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+\usepackage{hyperref}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{threeparttable}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{lmodern} % police Latin Modern
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[top=3cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\pagestyle{fancy}
+\lhead{Minne Adrien s154340 \\ Delaunoy Arnaud s153059}
+\hypersetup{                    % parametrage des hyperliens
+    colorlinks=true,                % colorise les liens
+    breaklinks=true,                % permet les retours à la ligne pour les liens trop longs
+    urlcolor= black,                 % couleur des hyperliens
+    linkcolor= black,                % couleur des liens internes aux documents (index, figures, tableaux, equations,...)
+    citecolor= green                % couleur des liens vers les references bibliographiques
+    }
+\title{Base de données: projet 1}
+\author{Delaunoy Arnaud \\ s153059}
+\date{}
+\lhead{Delaunoy Arnaud \\ s153059}
+\renewcommand\thesection{}
+\renewcommand\thesubsection{}
+\renewcommand\thesubsubsection{}
+
+\begin{document}
+\begin{titlepage}
+\maketitle
+\setcounter{page}{0}
+\thispagestyle{empty}
+\end{titlepage}
+\section{Modèle entité-relation}
+\subsection{clés entités}
+\subsubsection{espèce}
+nom scientifique
+\subsubsection{animal}
+numero de puce
+\subsubsection{institution}
+nom
+\subsubsection{intervention}
+date + rôle "animal" de intervention\_sur + rôle "vétérinaire" de intervention\_par
+\subsubsection{membre du personnel}
+numero de registre national
+\subsubsection{vétérinaire}
+numero de registre national
+\subsubsection{technicien}
+numero de registre national
+\subsubsection{enclos}
+ID
+\subsubsection{entretien}
+date + rôle "enclos" de entretenu + rôle "technicien" de réalisé\_par
+\subsubsection{équipement}
+ID
+\subsubsection{local}
+ID
+
+\subsection{clés relations}
+\subsubsection{intervention\_sur}
+rôle "intervention"
+\subsubsection{appartient\_a}
+rôle "animal"
+\subsubsection{prêté\_par}
+rôle "animal"
+\subsubsection{contient}
+rôle "animal"
+\subsubsection{intervention\_par}
+rôle "intervention"
+\subsubsection{entretenu}
+rôle "entretien"
+\subsubsection{utilise}
+rôle "entretien" + rôle "equipement"
+\subsubsection{entreposé}
+rôle "equipement"
+\subsubsection{réalisé\_par}
+rôle "technicien" + rôle "entretien"
+\subsection{contraintes d'intégrité}
+\section{Modèle relationnel}
+
+\end{document}
